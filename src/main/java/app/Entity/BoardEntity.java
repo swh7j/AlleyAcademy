@@ -1,47 +1,49 @@
 package app.Entity;
 
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 import java.util.Date;
 
-@Entity
-@Table(name = "board")
-@DynamicInsert
-@DynamicUpdate
-@Setter @Getter
-public class BoardEntity {
+
+@Entity @Table(name = "board")
+@Setter @Getter @Builder
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
+public class BoardEntity extends BaseTimeEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer b_id;
+    private int boardNo;
 
-    @Column(name = "b_type")
-    private int type;
+    @Column(name = "categoryType")
+    private int categoryType;
 
-    @Column(name = "b_title")
-    private String title;
+    @Column(name = "boardTitle")
+    private String boardTitle;
 
-    @Column(name = "b_contents")
-    private String contents;
+    @Column(name = "boardContents")
+    private String boardContents;
 
-    @Column(name = "m_num")
-    private Integer m_num;
+    @Column(name = "boardImg")
+    private String boardImg;
 
-    @Column(name = "b_create_time")
-    private Date create_time;
+    @Column(name = "memberNo")
+    private int memberNo;
 
-    @Column(name = "b_update_time")
-    private Date update_time;
+    @Column(name = "boardlike")
+    private int boardlike;
 
-    @Column(name = "b_like")
-    private Integer b_like;
+    @Column(name = "boardview")
+    private int boardview;
 
-    @Column(name = "b_view")
-    private Integer b_view;
+
+    @ManyToOne @JoinColumn(name = "cateno")
+    private CategoryEntity categoryEntity;
+
 
 }
