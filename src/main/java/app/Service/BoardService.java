@@ -47,7 +47,8 @@ public class BoardService {
         board.setType(updatedBoard.getType());
         board.setTitle(updatedBoard.getTitle());
         board.setContents(updatedBoard.getContents());
-        board.setUpdate_time(new Date());
+       /* board.setUpdate_time(new Date());*/
+
 
         BoardEntity endUpdatedBoard = boardRepository.save(board);
         return ResponseEntity.ok(endUpdatedBoard);

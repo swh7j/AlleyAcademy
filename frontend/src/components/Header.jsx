@@ -26,7 +26,6 @@ class HeaderComponent extends Component {
                                    </div>
                                    <div className="col-md-6 d-flex justify-content-end header_menu">
                                        <span><a href="/list"><button type="button" class="btn menu">학원찾기 </button></a></span>
-                                       <span><a href="/postlist"><button type="button" class="btn menu">게시판Test</button> </a></span>
                                        <span><a href="/boardlist"><button type="button" class="btn menu">게시판</button> </a></span>
                                        <span><button type="button" class="btn menu">로그인</button></span>
                                        <span><button type="button" class="btn menu">회원가입</button></span>

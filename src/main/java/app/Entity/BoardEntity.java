@@ -18,32 +18,25 @@ public class BoardEntity extends BaseTimeEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int boardNo;
+    private Integer b_id;
 
-    @Column(name = "categoryType")
-    private int categoryType;
+    @Column(name = "b_type")
+    private int type;
 
-    @Column(name = "boardTitle")
-    private String boardTitle;
+    @Column(name = "b_title")
+    private String title;
 
-    @Column(name = "boardContents")
-    private String boardContents;
-
-    @Column(name = "boardImg")
-    private String boardImg;
+    @Column(name = "b_contents")
+    private String contents;
 
     @Column(name = "memberNo")
-    private int memberNo;
-
-    @Column(name = "boardlike")
-    private int boardlike;
-
-    @Column(name = "boardview")
-    private int boardview;
+    private Integer memberNo;
 
 
-    @ManyToOne @JoinColumn(name = "cateno")
-    private CategoryEntity categoryEntity;
+    @Column(name = "b_like")
+    private Integer b_like;
 
+    @Column(name = "b_view")
+    private Integer b_view;
 
 }
