@@ -18,9 +18,9 @@ public class CategoryEntity extends BaseTimeEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int categoryNo;
-    @Column(name="c_type")
-    private int categoryType;
-
+    
+    @Column(name = "c_type")
+    private int type;
 /*  @OneToMany(mappedBy = "categoryEntity", cascade = CascadeType.ALL)
     private List<BoardEntity> boardEntityList = new ArrayList<>();*/
 }
