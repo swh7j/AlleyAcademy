@@ -58,7 +58,7 @@ public class AcademyService {
         return ResponseEntity.ok(result);
     }
 
-    public ResponseEntity<AcademyEntity> getAcademyByNo(Long no) {
+    public ResponseEntity<AcademyEntity> getAcademyByNo(Double no) {
         AcademyEntity academy = AR.findById(no)
                 .orElseThrow(() -> new ResourceNotFoundException("Not exist Board Data by no : ["+no+"]"));
         return ResponseEntity.ok(academy);

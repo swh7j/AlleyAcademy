@@ -95,13 +95,12 @@ class List extends Component {
             <div>
                 <h2 className="text-center">학원 목록</h2>
                 <div className ="row">
-                    <table className="table table-striped table-bordered">
+                    <table className="table table-striped table-bordered table-hover">
                         <thead>
                             <tr>
-                                <th>학원 번호</th>
-                                <th>학원 이름 </th>
+                                <th> 이름</th>
                                 <th> 담당 교육청 </th>
-
+                                <th> 교습과정목록명 </th>
                             </tr>
                         </thead>
                        <tbody>
@@ -109,9 +108,9 @@ class List extends Component {
                            this.state.lists.map(
                                    (list) =>
                                     <tr key = {list} onClick = {() => this.readAC(list.id)}>
-                                       <td> {list.id} </td>
                                        <td> {list.aca_NM} </td>
                                        <td> {list.atpt_OFCDC_SC_NM} </td>
+                                       <td> {list.realm_SC_NM} </td>
                                    </tr>
                                )
                            }
