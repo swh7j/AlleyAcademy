@@ -11,14 +11,13 @@ import javax.persistence.*;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @Setter
-@Entity(name = "academy")
-@Table(name = "academy")
+@Entity(name = "academylsit")
+@Table(name = "academylsit")
 public class AcademyEntity {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private Long ID;
-
+    private Double ID;
     @Column
     private String ATPT_OFCDC_SC_CODE;
     @Column

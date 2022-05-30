@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+/* global kakao */
+import React, { Component   } from 'react';
 import AcademyService from '../service/AcademyService';
-import Map from '../components/Map';
+import MapContainer from "./MapContainer";
 
 class DetailAcademy extends Component {
 
@@ -16,6 +17,7 @@ class DetailAcademy extends Component {
         AcademyService.getOneAcademy(this.state.no).then( res => {
             this.setState({list: res.data});
         });
+
     }
 
     goToList() {
@@ -25,12 +27,14 @@ class DetailAcademy extends Component {
 
     render() {
         return (
+
             <div>
                 <div className = "card col-md-6 offset-md-3">
-                    <h3 className ="text-center"> dd </h3>
+                    <h3 className ="text-center"> {this.state.list.aca_NM} </h3>
+                       <MapContainer searchPlace={this.state.list} />
                     <div className = "card-body">
                             <div className = "row">
-                                <label> Title </label> : {this.state.list.aca_NM}
+                            {console.log(this.state.list)}
                             </div>
                             <button className="btn btn-primary" onClick={this.goToList.bind(this)} style={{marginLeft:"10px"}}>학원목록</button>
                     </div>

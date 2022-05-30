@@ -38,7 +38,7 @@ public class AcademyController {
     }
     @GetMapping("/list/{no}")
     public ResponseEntity<AcademyEntity> getAcademyByNo(
-            @PathVariable Long no) {
+            @PathVariable Double no) {
         return academyService.getAcademyByNo(no);
     }
 

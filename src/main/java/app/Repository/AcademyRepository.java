@@ -6,12 +6,12 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface AcademyRepository extends JpaRepository<AcademyEntity, Long> {
+public interface AcademyRepository extends JpaRepository<AcademyEntity, Double> {
 
     public final static String SELECT_AC_LIST_PAGED = ""
             + "SELECT "
             + "*"
-            + " FROM academy WHERE 0 < id "
+            + " FROM academylsit "
             + "ORDER BY id ASC LIMIT ?1, ?2";
 
     @Query(value = SELECT_AC_LIST_PAGED, nativeQuery = true)
