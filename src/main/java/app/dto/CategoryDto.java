@@ -2,6 +2,8 @@ package app.dto;
 
 import lombok.*;
 
+import javax.persistence.Column;
+
 @Getter
 @Setter
 @Builder
@@ -10,5 +12,5 @@ import lombok.*;
 @NoArgsConstructor
 public class CategoryDto {
     private int categoryNo;
-    private int categoryType;
+    private int type;
 }

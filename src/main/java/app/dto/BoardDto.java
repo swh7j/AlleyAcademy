@@ -9,9 +9,18 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class BoardDto {
-    private int boardNo;
-    private String boardTitle;
-    private String boardContents;
-    private String boardWriter;
-    private String boardView;
+
+    private Integer b_id;
+
+    private int type;
+
+    private String title;
+
+    private String contents;
+
+    private Integer memberNo;
+
+    private Integer b_like;
+
+    private Integer b_view;
 }

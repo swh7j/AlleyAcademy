@@ -10,7 +10,7 @@ import java.util.Date;
 
 
 @Entity @Table(name = "board")
-@Setter @Getter @Builder
+@Setter @Getter
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
@@ -39,4 +39,7 @@ public class BoardEntity extends BaseTimeEntity{
     @Column(name = "b_view")
     private Integer b_view;
 
+
+   /* @ManyToOne @JoinColumn(name = "categoryNo")
+    private CategoryEntity categoryEntity;*/
 }
