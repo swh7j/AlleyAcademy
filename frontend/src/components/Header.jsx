@@ -32,40 +32,31 @@ class HeaderComponent extends Component {
                            <NavDropdown.Item href="#">고등학생</NavDropdown.Item>
                          </NavDropdown>
 
-                          <NavDropdown className="mx-1" title={ <div className="my-auto"> <div><h5>취업</h5></div> <div> 유 / 초 / 중 / 고 </div> </div>  } >
+                          <NavDropdown className="mx-1" title={ <div className="my-auto"> <div><h5>취업</h5></div> <div> IT / 자격증 / 직업훈련 외 </div> </div>  } >
                             <NavDropdown.Item href="#">유치원생</NavDropdown.Item>
                             <NavDropdown.Item href="#">초등학생</NavDropdown.Item>
                             <NavDropdown.Item href="#">중학생</NavDropdown.Item>
                             <NavDropdown.Item href="#">고등학생</NavDropdown.Item>
                           </NavDropdown>
 
-                         <NavDropdown className="mx-1" title={ <div className="my-auto"> <div><h5>취미</h5></div> <div> 유 / 초 / 중 / 고 </div> </div>  } >
+                         <NavDropdown className="mx-1" title={ <div className="my-auto"> <div><h5>취미</h5></div> <div> 운동 / 미술 / 음악 외 </div> </div>  } >
                            <NavDropdown.Item href="#">유치원생</NavDropdown.Item>
                            <NavDropdown.Item href="#">초등학생</NavDropdown.Item>
                            <NavDropdown.Item href="#">중학생</NavDropdown.Item>
                            <NavDropdown.Item href="#">고등학생</NavDropdown.Item>
                          </NavDropdown>
 
-                         <NavDropdown  className="mx-1" title={ <div className="my-auto"> <div><h5>공무원</h5></div> <div> 유 / 초 / 중 / 고 </div> </div>  } >
+                         <NavDropdown  className="mx-1" title={ <div className="my-auto"> <div><h5>공무원</h5></div> <div> 고시 / 행정 / 소방 외  </div> </div>  } >
                            <NavDropdown.Item href="#">유치원생</NavDropdown.Item>
                            <NavDropdown.Item href="#">초등학생</NavDropdown.Item>
                            <NavDropdown.Item href="#">중학생</NavDropdown.Item>
                            <NavDropdown.Item href="#">고등학생</NavDropdown.Item>
                          </NavDropdown>
-
-                         <NavDropdown  className="mx-1" title={ <div className="my-auto"> <div><h5>자격증</h5></div> <div> 유 / 초 / 중 / 고 </div> </div>  } >
-                           <NavDropdown.Item href="#">유치원생</NavDropdown.Item>
-                           <NavDropdown.Item href="#">초등학생</NavDropdown.Item>
-                           <NavDropdown.Item href="#">중학생</NavDropdown.Item>
-                           <NavDropdown.Item href="#">고등학생</NavDropdown.Item>
-                         </NavDropdown>
-
-
 
                        </Nav>
 
                        <Nav>
-                         <Nav.Link href="#deets">회원가입/로그인</Nav.Link>
+                         <Nav.Link href="#deets"> 로그인 </Nav.Link>
                          <Nav.Link eventKey={2} href="#memes"> 고객센터 </Nav.Link>
                          <Nav.Link eventKey={2} href="#memes"> 학원센터 </Nav.Link>
                        </Nav>

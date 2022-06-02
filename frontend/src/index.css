@@ -46,7 +46,8 @@ code {
     }
 
     .search_input{
-    color: black;
+    color: white;
+    font-weight: bold;
     border: 0;
     outline: 0;
     background: none;

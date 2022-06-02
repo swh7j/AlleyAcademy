@@ -20,6 +20,9 @@ class Main extends Component {
     render() {
         return (
             <div>
+                   <div className="one">
+                     <h1>우리동네 골목학원</h1>
+                   </div>
                         <div className="row my-3">
                              <div className="container h-100">
                                <div className="d-flex justify-content-center h-100">
@@ -118,132 +121,16 @@ class Main extends Component {
                                                 </div>
                                             </div>
 
-
                                         </div>
 
-                    <div>
-                        <h5  className="">최근 작성된 리뷰 학원 </h5>
-                    </div>
-
-                    <div className="row">
-
-                        <div className="col-md-2 col-sm-6 col  item2">
-                            <div className="card border-white">
-                                <img className="car-img-top" alt="" src={item} />
-                                <div className="card-body">
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-2 col-sm-6 col  item2">
-                            <div className="card border-white">
-                                <img className="car-img-top" alt="" src={item} />
-                                <div className="card-body">
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-2 col-sm-6 col  item2">
-                            <div className="card border-white">
-                                <img className="car-img-top" alt="" src={item} />
-                                <div className="card-body">
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-2 col-sm-6 col  item2">
-                            <div className="card border-white">
-                                <img className="car-img-top" alt="" src={item} />
-                                <div className="card-body">
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-2 col-sm-6 col  item2">
-                            <div className="card border-white">
-                                <img className="car-img-top" alt="" src={item} />
-                                <div className="card-body">
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-2 col-sm-6 col  item2">
-                            <div className="card border-white">
-                                <img className="car-img-top" alt="" src={item} />
-                                <div className="card-body">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                                        <div>
-                                            <h5  className="">최근 작성된 리뷰 학원 </h5>
+                                        <div className="one">
+                                            <h1> 추천 과목 </h1>
                                         </div>
 
-                                        <div className="row">
-
-                                            <div className="col-md-2 col-sm-6 col  item2">
-                                                <div className="card border-white">
-                                                    <img className="car-img-top" alt="" src={item} />
-                                                    <div className="card-body">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="col-md-2 col-sm-6 col  item2">
-                                                <div className="card border-white">
-                                                    <img className="car-img-top" alt="" src={item} />
-                                                    <div className="card-body">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="col-md-2 col-sm-6 col  item2">
-                                                <div className="card border-white">
-                                                    <img className="car-img-top" alt="" src={item} />
-                                                    <div className="card-body">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="col-md-2 col-sm-6 col  item2">
-                                                <div className="card border-white">
-                                                    <img className="car-img-top" alt="" src={item} />
-                                                    <div className="card-body">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="col-md-2 col-sm-6 col  item2">
-                                                <div className="card border-white">
-                                                    <img className="car-img-top" alt="" src={item} />
-                                                    <div className="card-body">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="col-md-2 col-sm-6 col  item2">
-                                                <div className="card border-white">
-                                                    <img className="car-img-top" alt="" src={item} />
-                                                    <div className="card-body">
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <div className="one">
+                                            <h1> 문의 하기 </h1>
                                         </div>
 
-
-                                                                                      <div>
-                                                                                        <h5  className=""> 광고 </h5>
-                                                                                    </div>
-
-                                                                        <div className="row">
-
-                                                                                    <div className="col-md-6 col-sm-6 col  item2">
-                                                                                        <div className="card border-white">
-                                                                                            <img className="car-img-top" alt="" src={item} />
-                                                                                            <div className="card-body">
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div className="col-md-6 col-sm-6 col  item2">
-                                                                                        <div className="card border-white">
-                                                                                            <img className="car-img-top" alt="" src={item} />
-                                                                                            <div className="card-body">
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                        </div>
 
             </div>
         );
