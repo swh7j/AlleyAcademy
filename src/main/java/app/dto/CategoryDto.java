@@ -12,5 +12,5 @@ import javax.persistence.Column;
 @NoArgsConstructor
 public class CategoryDto {
     private int categoryNo;
-    private int type;
+    private String categoryName;
 }

@@ -8,9 +8,9 @@ class Boardwrite extends Component {
 
         this.state = {
             no: this.props.match.params.no,
-            type: 0,
-            title: '',
-            contents: '',
+            categoryNo: 0,
+            boardTitle: '',
+            boardContents: '',
             memberNo: ''
         }
         this.changeTypeHandler = this.changeTypeHandler.bind(this);
@@ -21,13 +21,13 @@ class Boardwrite extends Component {
     }
 
     changeTypeHandler = (event) => {
-        this.setState({type: event.target.value});
+        this.setState({categoryNo: event.target.value});
     }
     changeTitleHandler = (event) => {
-        this.setState({title: event.target.value});
+        this.setState({boardTitle: event.target.value});
     }
     changeContentsHandler = (event) => {
-        this.setState({contents: event.target.value});
+        this.setState({boardContents: event.target.value});
     }
     changeMemberNoHandler = (event) => {
         this.setState({memberNo: event.target.value});
@@ -36,9 +36,9 @@ class Boardwrite extends Component {
     createBoard = (event) => {
         event.preventDefault();
         let board = {
-            type: this.state.type,
-            title: this.state.title,
-            contents: this.state.contents,
+            categoryNo: this.state.categoryNo,
+            boardTitle: this.state.boardTitle,
+            boardContents: this.state.boardContents,
             memberNo: this.state.memberNo
         };
 
@@ -71,9 +71,9 @@ class Boardwrite extends Component {
                 console.log("게시글  => "+ JSON.stringify(board));
 
                 this.setState({
-                        type: board.type,
-                        title: board.title,
-                        contents: board.contents,
+                        categoryNo: board.categoryNo,
+                        boardTitle: board.boardTitle,
+                        boardContents: board.boardContents,
                         memberNo: board.memberNo
                 });
             });
@@ -90,8 +90,9 @@ class Boardwrite extends Component {
                                 <form>
                                     <div className = "form-group">
                                         <label> 카테고리 </label>
-                                        <select placeholder="type" name="type" className="form-control"
-                                        value={this.state.type} onChange={this.changeTypeHandler}>
+                                        <select placeholder="categoryNo" name="categoryNo" className="form-control"
+                                        value={this.state.categoryNo} onChange={this.changeTypeHandler}>
+                                            <option selected="selected">선택</option>
                                             <option value="1">공지사항</option>
                                             <option value="2">질문과 답변</option>
                                             <option value="3">일반게시판</option>
@@ -99,12 +100,12 @@ class Boardwrite extends Component {
                                     </div>
                                     <div className = "form-group">
                                         <label> 제목 </label>
-                                        <input type="text" placeholder="title" name="title" className="form-control"
+                                        <input type="text" placeholder="boardTitle" name="boardTitle" className="form-control"
                                         value={this.state.title} onChange={this.changeTitleHandler}/>
                                     </div>
                                     <div className = "form-group">
                                         <label> 내용  </label>
-                                        <textarea placeholder="contents" name="contents" className="form-control"
+                                        <textarea placeholder="boardContents" name="boardContents" className="form-control"
                                         value={this.state.contents} onChange={this.changeContentsHandler}/>
                                     </div>
                                     <div className = "form-group">

@@ -11,34 +11,48 @@ import java.util.Date;
 
 @Entity @Table(name = "board")
 @Setter @Getter
-@ToString
-@AllArgsConstructor
+@ToString(exclude ="categoryEntity")
 @NoArgsConstructor
-public class BoardEntity extends BaseTimeEntity{
+public class BoardEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer b_id;
+    private Integer boardId;
 
-    @Column(name = "btype")
-    private int btype;
+    @Column(name = "boardTitle")
+    private String boardTitle;
 
-    @Column(name = "b_title")
-    private String title;
-
-    @Column(name = "b_contents")
-    private String contents;
+    @Column(name = "boardContents")
+    private String boardContents;
 
     @Column(name = "memberNo")
     private Integer memberNo;
 
-    @Column(name = "b_like")
-    private Integer b_like;
+    @Column(name = "boardLike")
+    private Integer boardLike;
 
-    @Column(name = "b_view")
-    private Integer b_view;
+    @Column(name = "boardView")
+    private Integer boardView;
 
+    @Column(name = "boardCreateTime")
+    private Date boardCreateTime;
+
+    @Column(name = "boardUpdateTime")
+    private Date boardUpdateTime;
 
     @ManyToOne @JoinColumn(name = "categoryNo")
     private CategoryEntity categoryEntity;
+
+    @Builder
+    public BoardEntity(Integer boardId, String boardTitle, String boardContents, Integer memberNo, Integer boardLike, Integer boardView, Date boardCreateTime, Date boardUpdateTime, CategoryEntity categoryEntity) {
+        this.boardId = boardId;
+        this.boardTitle = boardTitle;
+        this.boardContents = boardContents;
+        this.memberNo = memberNo;
+        this.boardLike = boardLike;
+        this.boardView = boardView;
+        this.boardCreateTime = boardCreateTime;
+        this.boardUpdateTime = boardUpdateTime;
+        this.categoryEntity = categoryEntity;
+    }
 }

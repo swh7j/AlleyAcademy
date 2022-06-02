@@ -38,7 +38,6 @@ class BoardList extends Component {
                              <tr>
                                 <th>글 번호</th>
                                 <th>제목 </th>
-                                <th>작성일 </th>
                                 <th>조회수</th>
                             </tr>
                         </thead>
@@ -47,11 +46,10 @@ class BoardList extends Component {
                            {
                                this.state.lists.map(
                                    (list) =>
-                                   <tr key = {list} onClick = {() => this.readBoard(list.b_id)}>
-                                       <td> {list.b_id} </td>
-                                       <td> {list.title} </td>
-                                       <td> {list.createdTime} </td>
-                                       <td> {list.b_view} </td>
+                                   <tr key = {list} onClick = {() => this.readBoard(list.boardId)}>
+                                       <td> {list.boardId} </td>
+                                       <td> {list.boardTitle} </td>
+                                       <td> {list.boardView} </td>
                                         {
 
                                         }

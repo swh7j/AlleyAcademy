@@ -18,21 +18,23 @@ class ReadBoard extends Component {
         });
     }
 
-    returnBoardType(typeNo) {
+    returnBoardType(categoryNo) {
         let type = null;
-        if (typeNo == 1) {
-            type = "자유게시판";
+        if(categoryNo == 1) {
+            type = "공지사항";
 
-        } else if (typeNo == 2 ) {
+        } else if(categoryNo == 2 ) {
             type = "질문과 답변 게시판";
 
-        } else {
+        } else if(categoryNo == 3 ) {
+            type = "자유게시판";
+        } else{
             type = "카테고리 미지정";
         }
 
         return (
             <div className = "row">
-                <label> Board Type : </label> {type}
+                <label> Board Type : </label> {categoryNo}
             </div>
         )
 
@@ -76,14 +78,14 @@ class ReadBoard extends Component {
                 <div className = "card col-md-6 offset-md-3">
                     <h3 className ="text-center"> 게시판 </h3>
                     <div className = "card-body">
-                            {this.returnBoardType(this.state.board.type)}
+                            {this.returnBoardType(this.state.board.categoryNo)}
                             <div className = "row">
-                                <label> Title </label> : {this.state.board.title}
+                                <label> Title </label> : {this.state.board.boardTitle}
                             </div>
 
                             <div className = "row">
                                 <label> Contents </label> : <br></br>
-                                <textarea value={this.state.board.contents} readOnly/>
+                                <textarea value={this.state.board.boardContents} readOnly/>
                             </div >
 
                             <div className = "row">
@@ -91,7 +93,7 @@ class ReadBoard extends Component {
                                 {this.state.board.memberNo}
                             </div>
 
-                            {this.returnDate(this.state.board.createdTime, this.state.board.updatedTime) }
+                             {this.returnDate(this.state.board.createdTime, this.state.board.updatedTime) }
                             <button className="btn btn-danger" onClick={() => this.deleteView()} style={{marginLeft:"10px"}}>삭제</button>
                             <button className="btn btn-info" onClick={this.goToUpdate} style={{marginLeft:"10px"}}>수정</button>
                             <button className="btn btn-primary" onClick={this.goToList.bind(this)} style={{marginLeft:"10px"}}>목록</button>

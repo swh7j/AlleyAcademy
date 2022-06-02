@@ -2,25 +2,28 @@ package app.dto;
 
 import lombok.*;
 
+import javax.persistence.Column;
+import java.util.Date;
+
 @Setter
 @Getter
-@Builder
 @ToString
-@AllArgsConstructor
 @NoArgsConstructor
 public class BoardDto {
 
-    private Integer b_id;
+    private Integer boardId;
 
-    private int type;
+    private int boardType;
 
-    private String title;
+    private String boardTitle;
 
-    private String contents;
+    private String boardContents;
 
     private Integer memberNo;
 
-    private Integer b_like;
+    private Integer boardLike;
 
-    private Integer b_view;
+    private Integer boardView;
+
+    private Integer categoryNo;
 }

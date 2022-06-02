@@ -19,8 +19,6 @@ public class AcademyController {
     @Autowired
     private AcademyService academyService;
 
-    @Autowired
-    private BoardService boardService;
 
     // get all board
 //    @GetMapping("/list")
@@ -40,38 +38,6 @@ public class AcademyController {
     public ResponseEntity<AcademyEntity> getAcademyByNo(
             @PathVariable Double no) {
         return academyService.getAcademyByNo(no);
-    }
-
-    @GetMapping("/boardList")
-    public List<BoardEntity> board_list() {
-        List<BoardEntity> b_list = boardService.get();
-        return b_list;
-    }
-
-    @PostMapping("/boardList")
-    public BoardEntity createBoard(@RequestBody BoardEntity board) {
-        return boardService.createBoard(board);
-    }
-
-    @GetMapping("/boardList/{no}")
-    public ResponseEntity<BoardEntity> getBoardByNo(
-            @PathVariable Integer no) {
-
-        return boardService.getBoard(no);
-    }
-
-    @PutMapping("/boardList/{no}")
-    public ResponseEntity<BoardEntity> updateBoardByNo(
-            @PathVariable Integer no, @RequestBody BoardEntity board){
-
-        return boardService.updateBoard(no, board);
-    }
-
-    @DeleteMapping("/boardList/{no}")
-    public ResponseEntity<Map<String, Boolean>> deleteBoardByNo(
-            @PathVariable Integer no) {
-
-        return boardService.deleteBoard(no);
     }
 
 }
