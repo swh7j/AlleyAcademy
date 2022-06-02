@@ -40,7 +40,8 @@ public class AcademyService {
     public ResponseEntity<Map> getac(Integer p_num) {
         Map result = null;
 
-        PagingUtil pu = new PagingUtil(p_num, 20, 5); // ($1:표시할 현재 페이지, $2:한페이지에 표시할 글 수, $3:한 페이지에 표시할 페이지 버튼의 수 )
+        PagingUtil pu = new PagingUtil(p_num, 20, 5);
+        // ($1:표시할 현재 페이지, $2:한페이지에 표시할 글 수, $3:한 페이지에 표시할 페이지 버튼의 수 )
         List<AcademyEntity> list = AR.findFromTo(pu.getObjectStartNum(), pu.getObjectCountPerPage());
         pu.setObjectCountTotal(findAllCount());
         pu.setCalcForPaging();

@@ -74,7 +74,7 @@ class ReadBoard extends Component {
         return (
             <div>
                 <div className = "card col-md-6 offset-md-3">
-                    <h3 className ="text-center"> dd </h3>
+                    <h3 className ="text-center"> 게시판 </h3>
                     <div className = "card-body">
                             {this.returnBoardType(this.state.board.type)}
                             <div className = "row">

@@ -9,7 +9,7 @@ class DetailAcademy extends Component {
         super(props);
         this.state = {
             no: this.props.match.params.no,
-            list: {},
+            list: {}
         }
     }
 

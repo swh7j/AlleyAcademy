@@ -44,7 +44,7 @@ public class BoardService {
             Integer no, BoardEntity updatedBoard) {
         BoardEntity board = boardRepository.findById(no)
                 .orElseThrow(() -> new ResourceNotFoundException("Not exist Board Data by no : ["+no+"]"));
-        board.setType(updatedBoard.getType());
+        board.setBtype(updatedBoard.getBtype());
         board.setTitle(updatedBoard.getTitle());
         board.setContents(updatedBoard.getContents());
        /* board.setUpdate_time(new Date());*/

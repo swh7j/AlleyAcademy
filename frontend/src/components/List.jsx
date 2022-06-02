@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AcademyService from '../service/AcademyService';
 
+
 class List extends Component {
 
     constructor(props) {
@@ -8,9 +9,12 @@ class List extends Component {
         this.state = {
             p_num: 1,
             paging: {},
-            lists:[]
+            lists:[],
         }
+
     }
+
+
 
     componentDidMount() {
         AcademyService.getAcademy_list(this.state.p_num).then((res) => {
@@ -91,7 +95,9 @@ class List extends Component {
             window.location.reload();
     }
     render() {
+
         return (
+
             <div>
                 <h2 className="text-center">학원 목록</h2>
                 <div className ="row">

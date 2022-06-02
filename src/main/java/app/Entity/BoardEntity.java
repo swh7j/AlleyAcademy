@@ -20,8 +20,8 @@ public class BoardEntity extends BaseTimeEntity{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer b_id;
 
-    @Column(name = "b_type")
-    private int type;
+    @Column(name = "btype")
+    private int btype;
 
     @Column(name = "b_title")
     private String title;
@@ -32,14 +32,12 @@ public class BoardEntity extends BaseTimeEntity{
     @Column(name = "memberNo")
     private Integer memberNo;
 
-
     @Column(name = "b_like")
     private Integer b_like;
 
     @Column(name = "b_view")
     private Integer b_view;
 
-
-   /* @ManyToOne @JoinColumn(name = "categoryNo")
-    private CategoryEntity categoryEntity;*/
+    @ManyToOne @JoinColumn(name = "categoryNo")
+    private CategoryEntity categoryEntity;
 }
