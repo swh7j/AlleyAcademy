@@ -91,6 +91,7 @@ class ReadBoard extends Component {
                             <div className = "row">
                                 <label> MemberNo  </label>:
                                 {this.state.board.memberNo}
+
                             </div>
 
                              {this.returnDate(this.state.board.createTime, this.state.board.modifiedTime) }
