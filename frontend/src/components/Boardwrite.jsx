@@ -101,12 +101,12 @@ class Boardwrite extends Component {
                                     <div className = "form-group">
                                         <label> 제목 </label>
                                         <input type="text" placeholder="boardTitle" name="boardTitle" className="form-control"
-                                        value={this.state.title} onChange={this.changeTitleHandler}/>
+                                        value={this.state.boardTitle} onChange={this.changeTitleHandler}/>
                                     </div>
                                     <div className = "form-group">
                                         <label> 내용  </label>
                                         <textarea placeholder="boardContents" name="boardContents" className="form-control"
-                                        value={this.state.contents} onChange={this.changeContentsHandler}/>
+                                        value={this.state.boardContents} onChange={this.changeContentsHandler}/>
                                     </div>
                                     <div className = "form-group">
                                         <label> 아이디 (차후에 회원 시스템 대비) </label>

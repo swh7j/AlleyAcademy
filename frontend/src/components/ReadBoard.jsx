@@ -40,16 +40,16 @@ class ReadBoard extends Component {
 
     }
 
-    returnDate(cTime, uTime) {
+    returnDate(createdTime, updatedTime) {
         return (
             <div className = "row">
-                <label>생성일 : [ {cTime} ] / 최종 수정일 : [ {uTime} ] </label>
+                <label>생성일 : [ {createdTime} ] / 최종 수정일 : [ {updatedTime} ] </label>
             </div>
         )
     }
 
     goToList() {
-        this.props.history.push('/Boardlist');
+        this.props.history.push('/BoardList');
         window.location.reload();
 
     }
@@ -63,7 +63,7 @@ class ReadBoard extends Component {
             BoardService.deleteBoard(this.state.no).then( res => {
                 console.log("delete result => "+ JSON.stringify(res));
                 if (res.status == 200) {
-                    this.props.history.push('/Boardlist');
+                    this.props.history.push('/BoardList');
                      window.location.reload();
                 } else {
                     alert("글 삭제가 실패했습니다.");

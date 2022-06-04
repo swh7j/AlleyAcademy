@@ -14,11 +14,14 @@ class BoardList extends Component {
         BoardService.get_boardlist().then((res) => { this.setState({ lists: res.data }); });
     }
     createBoard() {
-        this.props.history.push('/Boardwrite/_create');
+        this.props.history.push('/BoardWrite/_create');
         window.location.reload();
     }
+
+
+
     readBoard(no) {
-        this.props.history.push(`/Readboard/${no}`);
+        this.props.history.push(`/ReadBoard/${no}`);
         window.location.reload();
     }
     render() {
