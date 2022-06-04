@@ -13,7 +13,7 @@ import java.util.Date;
 @Setter @Getter
 @ToString(exclude ="categoryEntity")
 @NoArgsConstructor
-public class BoardEntity{
+public class BoardEntity extends BaseTimeEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,25 +34,18 @@ public class BoardEntity{
     @Column(name = "boardView")
     private Integer boardView;
 
-    @Column(name = "boardCreateTime")
-    private Date boardCreateTime;
-
-    @Column(name = "boardUpdateTime")
-    private Date boardUpdateTime;
 
     @ManyToOne @JoinColumn(name = "categoryNo")
     private CategoryEntity categoryEntity;
 
     @Builder
-    public BoardEntity(Integer boardId, String boardTitle, String boardContents, Integer memberNo, Integer boardLike, Integer boardView, Date boardCreateTime, Date boardUpdateTime, CategoryEntity categoryEntity) {
+    public BoardEntity(Integer boardId, String boardTitle, String boardContents, Integer memberNo, Integer boardLike, Integer boardView, CategoryEntity categoryEntity) {
         this.boardId = boardId;
         this.boardTitle = boardTitle;
         this.boardContents = boardContents;
         this.memberNo = memberNo;
         this.boardLike = boardLike;
         this.boardView = boardView;
-        this.boardCreateTime = boardCreateTime;
-        this.boardUpdateTime = boardUpdateTime;
         this.categoryEntity = categoryEntity;
     }
 }

@@ -40,10 +40,10 @@ class ReadBoard extends Component {
 
     }
 
-    returnDate(createdTime, updatedTime) {
+    returnDate(createTime, modifiedTime) {
         return (
             <div className = "row">
-                <label>생성일 : [ {createdTime} ] / 최종 수정일 : [ {updatedTime} ] </label>
+                <label>생성일 : [ {this.state.board.createTime} ] / 최종 수정일 : [ {this.state.board.modifiedTime} ] </label>
             </div>
         )
     }
@@ -93,7 +93,7 @@ class ReadBoard extends Component {
                                 {this.state.board.memberNo}
                             </div>
 
-                             {this.returnDate(this.state.board.createdTime, this.state.board.updatedTime) }
+                             {this.returnDate(this.state.board.createTime, this.state.board.modifiedTime) }
                             <button className="btn btn-danger" onClick={() => this.deleteView()} style={{marginLeft:"10px"}}>삭제</button>
                             <button className="btn btn-info" onClick={this.goToUpdate} style={{marginLeft:"10px"}}>수정</button>
                             <button className="btn btn-primary" onClick={this.goToList.bind(this)} style={{marginLeft:"10px"}}>목록</button>

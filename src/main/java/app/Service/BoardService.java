@@ -62,7 +62,7 @@ public class BoardService {
                 .orElseThrow(() -> new ResourceNotFoundException("Not exist Board Data by no : ["+no+"]"));
         board.setBoardTitle(updatedBoard.getBoardTitle());
         board.setBoardContents(updatedBoard.getBoardContents());
-        board.setBoardUpdateTime(new Date());
+        updatedBoard.getModifiedTime();
 
 
         BoardEntity endUpdatedBoard = boardRepository.save(board);
