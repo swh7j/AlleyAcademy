@@ -42,7 +42,7 @@ public class BoardService {
                 .boardContents( boardDto.getBoardContents())
                 .memberNo(boardDto.getMemberNo())
                 .categoryEntity( categoryEntity.get() )
-                .build();
+                 .build();
 
         categoryEntity.get().getBoardList().add( entity   );
 
@@ -62,7 +62,7 @@ public class BoardService {
                 .orElseThrow(() -> new ResourceNotFoundException("Not exist Board Data by no : ["+no+"]"));
         board.setBoardTitle(updatedBoard.getBoardTitle());
         board.setBoardContents(updatedBoard.getBoardContents());
-        updatedBoard.getModifiedTime();
+
 
 
         BoardEntity endUpdatedBoard = boardRepository.save(board);
@@ -80,5 +80,5 @@ public class BoardService {
         return ResponseEntity.ok(response);
     }
 
-   
+
 }
