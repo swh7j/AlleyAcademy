@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 import logo from '../img/logo.png';
+import { Navbar } from "react-bootstrap";
+import { Container } from "react-bootstrap";
+import { Nav } from "react-bootstrap";
+import { NavDropdown } from "react-bootstrap";
+import main5 from '../img/main_5.png';
 
 class HeaderComponent extends Component {
     constructor(props) {
@@ -10,31 +15,65 @@ class HeaderComponent extends Component {
         }
     }
     render() {
+        const imgsize = {
+            height: "60px"
+        }
         return (
             <div>
                 <header>
-                    <nav className="navbar navbar-expand-md navbar-dark">
-                       <div className="container">
-                               <div className="my-3 row header my-4">
-                                   <div className="col-md-6 row">
-                                       <div className="col-md-4">
-                                           <a href="/"> <img src={logo} alt="logo" style={{'width':'50%', 'margin-left':'50px'}}></img></a>
-                                       </div>
-                                       <div className="col-md-8 search_box">
-                                           <input type="text" placeholder="검색창" autocomplete="auto" class="form-control search"></input>
-                                       </div>
-                                   </div>
-                                   <div className="col-md-6 d-flex justify-content-end header_menu">
-                                       <span><a href="/list"><button type="button" class="btn menu">학원찾기 </button></a></span>
-                                       <span><a href="/boardlist"><button type="button" class="btn menu">게시판</button> </a></span>
-                                       <span><button type="button" class="btn menu">로그인</button></span>
-                                       <span><button type="button" class="btn menu">회원가입</button></span>
-                                       <span> <button type="button" class="btn up menu"   style={{'background-color' : '#9AF0B2'}}>학원등록</button> </span>
-                                   </div>
-                               </div>
-                           </div>
-                    </nav>
+                   <Navbar collapseOnSelect expand="sm" bg="white" variant="light" fixed="top"  >
+                     <Container>
+                     <Navbar.Brand href="#home" className="me-5"> <img style={imgsize} src={logo}/> </Navbar.Brand>
+                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                     <Navbar.Collapse id="responsive-navbar-nav">
+                       <Nav className="me-auto">
+
+                         <NavDropdown className="mx-1" title={ <div className="my-auto"> <div><h5>입시</h5></div> <div> 유 / 초 / 중 / 고 </div> </div>  } >
+                           <NavDropdown.Item href="/list">학원목록</NavDropdown.Item>
+                           <NavDropdown.Item href="/boardlist">초등학생</NavDropdown.Item>
+                           <NavDropdown.Item href="#">중학생</NavDropdown.Item>
+                           <NavDropdown.Item href="#">고등학생</NavDropdown.Item>
+                         </NavDropdown>
+
+                          <NavDropdown className="mx-1" title={ <div className="my-auto"> <div><h5>취업</h5></div> <div> IT / 자격증 / 직업훈련 외 </div> </div>  } >
+                            <NavDropdown.Item href="#">유치원생</NavDropdown.Item>
+                            <NavDropdown.Item href="#">초등학생</NavDropdown.Item>
+                            <NavDropdown.Item href="#">중학생</NavDropdown.Item>
+                            <NavDropdown.Item href="#">고등학생</NavDropdown.Item>
+                          </NavDropdown>
+
+                         <NavDropdown className="mx-1" title={ <div className="my-auto"> <div><h5>취미</h5></div> <div> 운동 / 미술 / 음악 외 </div> </div>  } >
+                           <NavDropdown.Item href="#">유치원생</NavDropdown.Item>
+                           <NavDropdown.Item href="#">초등학생</NavDropdown.Item>
+                           <NavDropdown.Item href="#">중학생</NavDropdown.Item>
+                           <NavDropdown.Item href="#">고등학생</NavDropdown.Item>
+                         </NavDropdown>
+
+                         <NavDropdown  className="mx-1" title={ <div className="my-auto"> <div><h5>공무원</h5></div> <div> 고시 / 행정 / 소방 외  </div> </div>  } >
+                           <NavDropdown.Item href="#">유치원생</NavDropdown.Item>
+                           <NavDropdown.Item href="#">초등학생</NavDropdown.Item>
+                           <NavDropdown.Item href="#">중학생</NavDropdown.Item>
+                           <NavDropdown.Item href="#">고등학생</NavDropdown.Item>
+                         </NavDropdown>
+
+                       </Nav>
+
+                       <Nav>
+                         <Nav.Link href="#deets"> 로그인 </Nav.Link>
+                         <Nav.Link eventKey={2} href="#memes"> 고객센터 </Nav.Link>
+                         <Nav.Link eventKey={2} href="#memes"> 학원센터 </Nav.Link>
+                       </Nav>
+                     </Navbar.Collapse>
+                     </Container>
+                   </Navbar>
                 </header>
+                 <br></br>
+                 <br></br>
+                 <div className="mainimg">
+                        <img src={main5} alt="5" style={{'width':'100%'}} />
+                 </div>
+
+
             </div>
         );
     }

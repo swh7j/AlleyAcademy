@@ -1,27 +1,35 @@
 import './App.css';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+
 import Main from './components/Main';
-import List from './components/List';
-import Boardlist from './components/BoardList';
-import Boardwrite from './components/Boardwrite';
 import HeaderComponent from './components/Header';
 import FooterComponent from './components/Footer';
-import ReadBoard from './components/ReadBoard';
-import DetailAcademy from './components/DetailAcademy';
+
+import List from './components/academy/List';
+import DetailAcademy from './components/academy/DetailAcademy';
+
+import Boardlist from './components/board/BoardList';
+import Boardwrite from './components/board/Boardwrite';
+import ReadBoard from './components/board/ReadBoard';
+
+import Login from './components/member/Login';
+
 
 function App() {
   return (
     <div>
       <Router>
         <HeaderComponent/>
+        <br></br>
           <div className="container">
              <Switch>
                 <Route path = "/" exact component = {Main}></Route>
-                <Route path = "/List"  component = {List}></Route>
-                <Route path = "/Boardlist"  component = {Boardlist}></Route>
-                <Route path = "/Boardwrite/:no"  component = {Boardwrite}></Route>
-                <Route path = "/Readboard/:no" component = {ReadBoard}></Route>
-                <Route path = "/DetailAcademy/:no" component = {DetailAcademy}></Route>
+                <Route path = "/list"  component = {List}></Route>
+                <Route path = "/boardlist"  component = {Boardlist}></Route>
+                <Route path = "/boardwrite/:no"  component = {Boardwrite}></Route>
+                <Route path = "/readboard/:no" component = {ReadBoard}></Route>
+                <Route path = "/detailAcademy/:no" component = {DetailAcademy}></Route>
+                <Route path = "/login" component = {Login}></Route>
              </Switch>
           </div>
           <br></br>

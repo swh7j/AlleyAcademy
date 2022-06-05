@@ -25,61 +25,31 @@ class FooterComponent extends Component {
                                    </div>
                                </div>
                                <div className="col-md-4 offset-4 nav noti my-2">
-                                   <div className="col-md-3">
-                                       <ul>
-                                           <li style={{'font-weight' : 'bold', 'font-decoration' : 'none'}}>고객센터</li>
-                                           <li>고객센터</li>
-                                           <li>고객센터</li>
-                                       </ul>
-                                   </div>
-                                   <div className="col-md-3">
-                                       <ul>
-                                           <li style={{'font-weight' : 'bold', 'font-decoration' : 'none'}}>고객센터</li>
-                                           <li>고객센터</li>
-                                           <li>고객센터</li>
-                                       </ul>
-                                   </div>
-                                   <div className="col-md-3">
-                                       <ul>
-                                           <li style={{'font-weight' : 'bold', 'font-decoration' : 'none'}}>고객센터</li>
-                                           <li>고객센터</li>
-                                           <li>고객센터</li>
-                                       </ul>
-                                   </div>
-                                   <div className="col-md-3">
-                                       <ul>
-                                          <li style={{'font-weight' : 'bold', 'font-decoration' : 'none'}}>고객센터</li>
-                                           <li>고객센터</li>
-                                           <li>고객센터</li>
-                                       </ul>
-                                   </div>
-                               </div>
-                           </div>
-                           <div className="row">
-                               <div className="col-md-9">
-                                   <div className="nav">
-                                       <ul className="nav mx-2">
-                                           <li >이용약관</li>
-                                           <li style={{'font-weight' : 'bold', 'font-decoration' : 'none'}}>개인정보 처리방침</li>
-                                           <li style={{'font-weight' : 'bold', 'font-decoration' : 'none'}}>사업자 정보관리</li>
-                                       </ul>
-                                   </div>
-                                   <div className="nav">
-                                       <ul className="nav mx-2">
-                                           <li >이용약관</li>
-                                           <li style={{'margin-left':'40px'}}>개인정보 처리방침</li>
-                                           <li style={{'margin-left':'40px'}}>사업자 정보관리</li>
-                                       </ul>
-                                   </div>
-                               </div>
-                               <div className="col-md-3">
-                                   <div className="nav">
-                                       <ul className="nav mx-2">
-                                           <li style={{'margin-right':'10px'}}><i className="fab fa-google fa-2x"></i></li>
-                                           <li><i className="fab fa-google fa-2x"></i></li>
-                                           <li style={{'margin-right':'10px'}}><i className="fab fa-google fa-2x"></i></li>
-                                       </ul>
-                                   </div>
+                                   <div className="col-md-9">
+                                                                      <div className="nav">
+                                                                          <ul className="nav mx-2">
+                                                                              <li >이용약관</li>
+                                                                              <li style={{'font-weight' : 'bold', 'font-decoration' : 'none'}}>개인정보 처리방침</li>
+                                                                              <li style={{'font-weight' : 'bold', 'font-decoration' : 'none'}}>사업자 정보관리</li>
+                                                                          </ul>
+                                                                      </div>
+                                                                      <div className="nav">
+                                                                          <ul className="nav mx-2">
+                                                                              <li >이용약관</li>
+                                                                              <li style={{'margin-left':'40px'}}>개인정보 처리방침</li>
+                                                                              <li style={{'margin-left':'40px'}}>사업자 정보관리</li>
+                                                                          </ul>
+                                                                      </div>
+                                                                  </div>
+                                                                  <div className="col-md-3">
+                                                                      <div className="nav">
+                                                                          <ul className="nav mx-2">
+                                                                              <li style={{'margin-right':'10px'}}><i className="fab fa-google fa-2x"></i></li>
+                                                                              <li><i className="fab fa-google fa-2x"></i></li>
+                                                                              <li style={{'margin-right':'10px'}}><i className="fab fa-google fa-2x"></i></li>
+                                                                          </ul>
+                                                                      </div>
+                                                                  </div>
                                </div>
                            </div>
                        </div>
