@@ -42,7 +42,7 @@ public class BoardService {
                 .boardContents( boardDto.getBoardContents())
                 .memberNo(boardDto.getMemberNo())
                 .categoryEntity( categoryEntity.get() )
-                 .build();
+                .build();
 
         categoryEntity.get().getBoardList().add( entity   );
 
