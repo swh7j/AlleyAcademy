@@ -41,6 +41,7 @@ class Login extends Component {
                     <div className="col-md-4 offset-4">
                         <h3 className="text-center">LOGIN</h3>
                         <div id="naverIdLogin"></div>
+
             		</div>
             	</div>
             </div>

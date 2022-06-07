@@ -13,6 +13,7 @@ import Boardwrite from './components/board/Boardwrite';
 import ReadBoard from './components/board/ReadBoard';
 
 import Login from './components/member/Login';
+import signup from './components/member/signup';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
                 <Route path = "/readboard/:no" component = {ReadBoard}></Route>
                 <Route path = "/detailAcademy/:no" component = {DetailAcademy}></Route>
                 <Route path = "/login" component = {Login}></Route>
+                <Route path = "/signup" component = {signup}></Route>
              </Switch>
           </div>
           <br></br>
