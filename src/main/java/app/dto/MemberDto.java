@@ -5,26 +5,25 @@ import org.apache.catalina.Role;
 
 import java.time.LocalDateTime;
 
-/*
+
 @NoArgsConstructor // 빈생성자
 @AllArgsConstructor // 풀생성자
 @Getter // get 메소드
 @Setter // set 메소드
 @ToString // 객체정보 메소드
-@Builder*/
+@Builder
 public class MemberDto {
 
-/*
+
     private int memberNo;
     private String memberId;
     private String memberPw;
     private String memberName;
     private String memberToken;
     private String memberEmail;
-    private int memberAge;
-    private int memberPhone;
-    private int memberGender;
-    private LocalDateTime memberCreatedDate;
+    private String memberAge;
+    private String memberPhone;
+    private String memberGender;
     private int memberCondition;
     private int memberPoint;
     private Role memberGrade;
@@ -42,12 +41,9 @@ public class MemberDto {
                 .memberAge(this.memberAge)
                 .memberPoint(this.memberPoint)
                 .memberCondition(this.memberCondition)
-                .build();
-                *//*.memberGrade(Role.MEMBER).build();*//*
-    }*/
+                .memberGrade(app.Entity.Role.MASTER).build();
 
 
-
-
+    }
 
 }
