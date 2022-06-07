@@ -58,7 +58,7 @@ public class OauthDto {
                 .mobile((String)  response.get("mobile"))
                 .gender((String) response.get("gender"))
                 .attribute(attribute)
-                .nameattributekey(nameattributekey)
+                .nameattributekey((String)response.get("id"))
                 .build();
     }
     // 첫 로그인시 회원가입 dto => entity변환 => DB
