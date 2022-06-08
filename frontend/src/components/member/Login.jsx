@@ -40,12 +40,8 @@ class Login extends Component {
                 <div className="row">
                     <div className="col-md-4 offset-4">
                         <h3 className="text-center">LOGIN</h3>
-                        <div id="naverIdLogin">
-                           {/*      아이디 : <input type="text" className="memberId" placeholder="아이디"/><br></br>
-                                비밀번호 : <input type="text" className="memberPw" placeholder="비밀번호" type="password"/><br></br>
-                                <button type="submit" >전송</button> */}
-                        </div>
-
+                         <a href="/oauth2/authorization/naver">네이버로그인</a>
+                          <a href="/oauth2/authorization/kakao">카카오로그인</a>
             		</div>
             	</div>
             </div>

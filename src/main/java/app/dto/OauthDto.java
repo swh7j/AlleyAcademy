@@ -43,11 +43,15 @@ public class OauthDto {
     public static OauthDto of(String registrationid, String nameattributekey, Map<String, Object> attribute){
         if(registrationid.equals("naver")){
             return ofnaver(nameattributekey, attribute);
-        } else{
-            return ofnaver(nameattributekey, attribute);
+        } else if(registrationid.equals("kakao")){
+            return ofkakao(nameattributekey, attribute);
+        } else {
+            return null;
         }
 
     }
+
+
     // 네이버 정보 dto 변환 메소드
     private static OauthDto ofnaver(String nameattributekey, Map<String, Object> attribute){
         Map<String, Object> response = (Map<String, Object>) attribute.get("response");
@@ -60,6 +64,22 @@ public class OauthDto {
                 .attribute(attribute)
                 .nameattributekey((String)response.get("id"))
                 .build();
+    }
+
+    // 카카오 정보 dto 변환 메소드
+    private static OauthDto ofkakao(String nameattributekey, Map<String, Object> attribute){
+        Map<String, Object> kakao_account = (Map<String, Object>) attribute.get("kakao_account");
+        Map<String, Object> profile = (Map<String, Object>) kakao_account.get("profile");
+      //  Map<String, Object> response = (Map<String, Object>) attribute.get("response");
+        //    System.out.println(nameattributekey);
+        return OauthDto.builder()
+                .name((String) profile.get("nickname"))
+                .email((String) kakao_account.get("email"))
+                .attribute(attribute)
+                .nameattributekey(nameattributekey)
+                .build();
+
+
     }
     // 첫 로그인시 회원가입 dto => entity변환 => DB
     public MemberEntity toentity(){
