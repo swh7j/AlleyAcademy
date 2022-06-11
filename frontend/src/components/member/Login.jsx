@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Login extends Component {
 
     componentDidMount() {
-        // Naver sdk import
+       /*  // Naver sdk import
         const naverScript = document.createElement("script");
         naverScript.src =
           "https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js";
@@ -32,7 +32,7 @@ class Login extends Component {
               sessionStorage.setItem("id", naverLogin.user.getEmail());
             }
           });
-        };
+        }; */
       }
     render() {
         return (
@@ -40,8 +40,7 @@ class Login extends Component {
                 <div className="row">
                     <div className="col-md-4 offset-4">
                         <h3 className="text-center">LOGIN</h3>
-                         <a href="/oauth2/authorization/naver">네이버로그인</a>
-                          <a href="/oauth2/authorization/kakao">카카오로그인</a>
+
             		</div>
             	</div>
             </div>
