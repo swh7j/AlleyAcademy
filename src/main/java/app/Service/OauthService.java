@@ -22,7 +22,7 @@ import java.util.Map;
 public class OauthService implements OAuth2UserService<OAuth2UserRequest, OAuth2User> {
 
     @Override // 소셜 로그인후 회원정보 가져오기 메소드
-    public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
+    public OAuth2User loadUser(OAuth2UserRequest userRequest ) throws OAuth2AuthenticationException {
 
         OAuth2UserService oAuth2UserService = new DefaultOAuth2UserService();
         OAuth2User oAuth2User = oAuth2UserService.loadUser( userRequest );  // perperties 에 요청 uri로부터  인증,토큰,회원정보 등등
@@ -35,6 +35,10 @@ public class OauthService implements OAuth2UserService<OAuth2UserRequest, OAuth2
 
         // 클라이언트 아이디 가져오기
         String registrationid = userRequest.getClientRegistration().getRegistrationId();
+
+        System.out.println(   registrationid  );
+        System.out.println(   nameattributekey  );
+        System.out.println(   oAuth2User.getAttributes()  );
 
         // DTO
         OauthDto oauth2Dto = OauthDto.of( registrationid , nameattributekey  , oAuth2User.getAttributes() );

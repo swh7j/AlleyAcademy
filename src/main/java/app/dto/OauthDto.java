@@ -10,7 +10,7 @@ import java.util.Map;
 
 
 public class OauthDto {
-   // 닉네임
+    // 닉네임
     String name;
     // 이메일
     String email;
@@ -70,13 +70,15 @@ public class OauthDto {
     private static OauthDto ofkakao(String nameattributekey, Map<String, Object> attribute){
         Map<String, Object> kakao_account = (Map<String, Object>) attribute.get("kakao_account");
         Map<String, Object> profile = (Map<String, Object>) kakao_account.get("profile");
-      //  Map<String, Object> response = (Map<String, Object>) attribute.get("response");
-        //    System.out.println(nameattributekey);
+        //  Map<String, Object> response = (Map<String, Object>) attribute.get("response");
+        System.out.println(kakao_account);
+        System.out.println(profile);
         return OauthDto.builder()
                 .name((String) profile.get("nickname"))
                 .email((String) kakao_account.get("email"))
+                .gender( (String)kakao_account.get("gender") )
+                .age( (String)kakao_account.get("age_range") )
                 .attribute(attribute)
-                .nameattributekey(nameattributekey)
                 .build();
 
 
