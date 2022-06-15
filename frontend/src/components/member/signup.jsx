@@ -32,7 +32,7 @@ class signup extends Component {
                                     회원나이 : <input  id ="age_val"type="text" className="memberAge"/> <br></br>
                                     회원연락처 : <input  id ="phone_val"type="text" className="memberPhone"/> <br></br>
                                     회원성별 : <input  id ="gender_val"type="text" className="memberGender"/> <br></br>
-                                    <button type="submit" >전송</button>
+                               <input id="formsubmit" type="button" class="btn btn-warning p-2 my-2"  style="float: right; width:100px;" value="Signup">
 
 
 
