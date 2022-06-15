@@ -59,7 +59,7 @@ class HeaderComponent extends Component {
                        </Nav>
 
                        <Nav>
-                         <Nav.Link href="#deets"> 로그인 </Nav.Link>
+                         <Nav.Link href="/login"> 로그인 </Nav.Link>
                           <a href="/oauth2/authorization/naver">네이버로그인</a>
                           <a href="/oauth2/authorization/kakao">카카오로그인</a>
                          <Nav.Link eventKey={2} href="#memes"> 고객센터 </Nav.Link>

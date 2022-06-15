@@ -58,7 +58,7 @@ public class OauthService implements OAuth2UserService<OAuth2UserRequest, OAuth2
         MemberDto loginDto =   MemberDto.builder().memberId(snsid).memberNo( memberEntity.getMemberNo() ).build();
         HttpSession session = request.getSession();   // 서버내 세션 가져오기
         session.setAttribute( "logindto" , loginDto );    // 세션 설정
-        //memberRepository.save(  oauth2Dto.toentity()   );
+        memberRepository.save(  oauth2Dto.toentity()   );
 
 
         // 리턴 ( 회원정보와 권한[키] )

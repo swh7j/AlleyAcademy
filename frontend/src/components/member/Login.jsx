@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Login extends Component {
 
     componentDidMount() {
-        // Naver sdk import
+      /*   // Naver sdk import
         const naverScript = document.createElement("script");
         naverScript.src =
           "https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js";
@@ -32,7 +32,7 @@ class Login extends Component {
               sessionStorage.setItem("id", naverLogin.user.getEmail());
             }
           });
-        };
+        };*/
       }
     render() {
         return (

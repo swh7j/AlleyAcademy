@@ -24,6 +24,9 @@ class AuthService {
             return response.data;
 
         });
+    }
+
+
 
     logout(){
         localStorage.removeItem('member');
@@ -33,7 +36,7 @@ class AuthService {
         return JSON.parse(localStorage.getItem('member'));
     }
 
-    }
+
 
 
 
