@@ -3,6 +3,7 @@ package app.Service;
 
 import app.Entity.MemberEntity;
 import app.Repository.MemberRepository;
+import app.dto.MemberDto;
 import app.dto.OauthDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -15,8 +16,8 @@ import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.Collections;
-import java.util.Map;
 
 @Service
 public class OauthService implements OAuth2UserService<OAuth2UserRequest, OAuth2User> {
@@ -25,7 +26,7 @@ public class OauthService implements OAuth2UserService<OAuth2UserRequest, OAuth2
     public OAuth2User loadUser(OAuth2UserRequest userRequest ) throws OAuth2AuthenticationException {
 
         OAuth2UserService oAuth2UserService = new DefaultOAuth2UserService();
-        OAuth2User oAuth2User = oAuth2UserService.loadUser( userRequest );  // perperties 에 요청 uri로부터  인증,토큰,회원정보 등등
+        OAuth2User oAuth2User = oAuth2UserService.loadUser(userRequest);  // perperties 에 요청 uri로부터  인증,토큰,회원정보 등등
 
         // 회원정보 속성 가져오기
         String nameattributekey = userRequest.getClientRegistration()
@@ -36,23 +37,39 @@ public class OauthService implements OAuth2UserService<OAuth2UserRequest, OAuth2
         // 클라이언트 아이디 가져오기
         String registrationid = userRequest.getClientRegistration().getRegistrationId();
 
-        System.out.println(   registrationid  );
-        System.out.println(   nameattributekey  );
-        System.out.println(   oAuth2User.getAttributes()  );
+        System.out.println(registrationid);
+        System.out.println(nameattributekey);
+        System.out.println(oAuth2User.getAttributes());
 
         // DTO
-        OauthDto oauth2Dto = OauthDto.of( registrationid , nameattributekey  , oAuth2User.getAttributes() );
+        OauthDto oauth2Dto = OauthDto.of(registrationid, nameattributekey, oAuth2User.getAttributes());
 
         // oauth2Dto -> entitiy
 
-        System.out.println( oauth2Dto.toentity()   );
+     /*   System.out.println( oauth2Dto.toentity()   );
         //
         memberRepository.save(  oauth2Dto.toentity()   );
 
         // 리턴 ( 회원정보와 권한[키] )
         return null;
-    }
+    }*/
+        MemberEntity memberEntity= saveorupdate(oauth2Dto);
+        String snsid = memberEntity.getMemberEmail().split("@")[0];
+        MemberDto loginDto =   MemberDto.builder().memberId(snsid).memberNo( memberEntity.getMemberNo() ).build();
+        HttpSession session = request.getSession();   // 서버내 세션 가져오기
+        session.setAttribute( "logindto" , loginDto );    // 세션 설정
+        //memberRepository.save(  oauth2Dto.toentity()   );
 
+
+        // 리턴 ( 회원정보와 권한[키] )
+        return new DefaultOAuth2User(
+                Collections.singleton( new SimpleGrantedAuthority(  memberEntity.getRolekey()  )) ,
+                oauth2Dto.getAttribute() ,
+                oauth2Dto.getNameattributekey()  );
+
+
+
+    }
     @Autowired
     private HttpServletRequest request;
     @Autowired

@@ -10,7 +10,7 @@ import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-
+@Getter
 public class IntergratedDto implements UserDetails {
 
     private int memberNo;

@@ -8,7 +8,8 @@ import lombok.Setter;
 
 import java.util.Map;
 
-
+@Getter
+@Setter
 public class OauthDto {
     // 닉네임
     String name;

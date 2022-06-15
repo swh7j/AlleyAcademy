@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 
-const ACADEMY_API_BASE_URL = "http://localhost:80/api/list";
+const ACADEMY_API_BASE_URL = "http://localhost:8081/api/list";
 
 class AcademyService {
 
