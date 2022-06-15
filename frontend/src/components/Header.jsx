@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import logo from '../img/logo.png';
+import logo from '../img/main/logo.png';
 import { Navbar } from "react-bootstrap";
 import { Container } from "react-bootstrap";
 import { Nav } from "react-bootstrap";
 import { NavDropdown } from "react-bootstrap";
-import main5 from '../img/main_5.png';
+import main5 from '../img/main/main_5.png';
 
 class HeaderComponent extends Component {
     constructor(props) {
@@ -23,14 +23,14 @@ class HeaderComponent extends Component {
                 <header>
                    <Navbar collapseOnSelect expand="sm" bg="white" variant="light" fixed="top"  >
                      <Container>
-                     <Navbar.Brand href="#home" className="me-5"> <img style={imgsize} src={logo}/> </Navbar.Brand>
+                     <Navbar.Brand href="/" className="me-5"> <img style={imgsize} src={logo}/> </Navbar.Brand>
                      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                      <Navbar.Collapse id="responsive-navbar-nav">
                        <Nav className="me-auto">
 
                          <NavDropdown className="mx-1" title={ <div className="my-auto"> <div><h5>입시</h5></div> <div> 유 / 초 / 중 / 고 </div> </div>  } >
-                           <NavDropdown.Item href="/list">학원목록</NavDropdown.Item>
-                           <NavDropdown.Item href="/boardlist">게시판</NavDropdown.Item>
+                           <NavDropdown.Item href="/main">학원목록</NavDropdown.Item>
+                           <NavDropdown.Item href="/boardlist">초등학생</NavDropdown.Item>
                            <NavDropdown.Item href="#">중학생</NavDropdown.Item>
                            <NavDropdown.Item href="#">고등학생</NavDropdown.Item>
                          </NavDropdown>
@@ -59,10 +59,9 @@ class HeaderComponent extends Component {
                        </Nav>
 
                        <Nav>
-                         <Nav.Link href="/Login"> 로그인 </Nav.Link>
-                         <a href="/oauth2/authorization/naver">네이버로그인</a>
-                         <a href="/oauth2/authorization/kakao">카카오로그인</a>
-                          <Nav.Link href="/signup"> 회원가입 </Nav.Link>
+                         <Nav.Link href="#deets"> 로그인 </Nav.Link>
+                          <a href="/oauth2/authorization/naver">네이버로그인</a>
+                          <a href="/oauth2/authorization/kakao">카카오로그인</a>
                          <Nav.Link eventKey={2} href="#memes"> 고객센터 </Nav.Link>
                          <Nav.Link eventKey={2} href="#memes"> 학원센터 </Nav.Link>
                        </Nav>

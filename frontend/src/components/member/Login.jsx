@@ -40,7 +40,8 @@ class Login extends Component {
                 <div className="row">
                     <div className="col-md-4 offset-4">
                         <h3 className="text-center">LOGIN</h3>
-
+                        <a href="/oauth2/authorization/naver">네이버로그인</a>
+                         <a href="/oauth2/authorization/kakao">카카오로그인</a>
             		</div>
             	</div>
             </div>

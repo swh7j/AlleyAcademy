@@ -6,6 +6,7 @@ import app.Exception.ResourceNotFoundException;
 import app.Repository.BoardRepository;
 import app.Repository.CategoryRepository;
 import app.dto.BoardDto;
+import app.util.PagingUtil;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -25,17 +26,43 @@ public class BoardService {
     private CategoryRepository categoryRepository;
 
 
-    @Transactional
-    public List<BoardEntity> get() {
+//    @Transactional
+//    public List<BoardEntity> get() {
+//
+//        System.out.println("게시판 메소드 실행");
+//        List<BoardEntity> b_list = boardRepository.findAll();
+//        return b_list;
+//    }
 
-        System.out.println("게시판 메소드 실행");
-        List<BoardEntity> b_list = boardRepository.findAll();
-        return b_list;
+    @Transactional
+    public int findAllCount() {
+        return (int) boardRepository.count();
+    }
+
+    @Transactional
+    public ResponseEntity<Map> getboard(Integer p_num) {
+        Map result = null;
+
+        PagingUtil pu = new PagingUtil(p_num, 4, 5); // ($1:표시할 현재 페이지, $2:한페이지에 표시할 글 수, $3:한 페이지에 표시할 페이지 버튼의 수 )
+        List<BoardEntity> list = boardRepository.findFromTo(pu.getObjectStartNum(), pu.getObjectCountPerPage());
+        pu.setObjectCountTotal(findAllCount());
+        pu.setCalcForPaging();
+
+
+        if (list == null || list.size() == 0) {
+            return null;
+        }
+
+        result = new HashMap<>();
+        result.put("pagingData", pu);
+        result.put("list", list);
+
+        return ResponseEntity.ok(result);
     }
 
     public BoardEntity createBoard(BoardDto boardDto  ) {
         System.out.println( boardDto.toString() );
-         Optional<CategoryEntity> categoryEntity  = categoryRepository.findById( boardDto.getCategoryNo() );
+        Optional<CategoryEntity> categoryEntity  = categoryRepository.findById( boardDto.getCategoryNo() );
 
         BoardEntity entity = BoardEntity.builder()
                 .boardTitle( boardDto.getBoardTitle())

@@ -3,7 +3,6 @@ package app.Controller;
 import app.Entity.AcademyEntity;
 import app.Entity.BoardEntity;
 import app.Service.AcademyService;
-import app.Service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,19 +18,11 @@ public class AcademyController {
     @Autowired
     private AcademyService academyService;
 
-
-    // get all board
-//    @GetMapping("/list")
-//    public List<AcademyEntity> academy_list() {
-//        List<AcademyEntity> list = academyService.get();
-//        return list;
-//    }
     @GetMapping("/list")
     public ResponseEntity<Map> getAllacademy(@RequestParam(value = "p_num", required=false) Integer p_num) {
         if (p_num == null || p_num <= 0) {
             p_num = 1;
         }
-        System.out.println(academyService.getac(p_num));
         return  academyService.getac(p_num);
     }
     @GetMapping("/list/{no}")
@@ -40,4 +31,10 @@ public class AcademyController {
         return academyService.getAcademyByNo(no);
     }
 
+    @GetMapping("/list2")
+    public List<AcademyEntity> board_list() {
+
+        List<AcademyEntity> all_list = academyService.getall();
+        return all_list;
+    }
 }

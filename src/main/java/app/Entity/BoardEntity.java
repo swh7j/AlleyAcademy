@@ -17,7 +17,7 @@ public class BoardEntity extends BaseTimeEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer boardId;
+    private Integer bid;
 
     @Column(name = "boardTitle")
     private String boardTitle;
@@ -39,8 +39,8 @@ public class BoardEntity extends BaseTimeEntity{
     private CategoryEntity categoryEntity;
 
     @Builder
-    public BoardEntity(Integer boardId, String boardTitle, String boardContents, Integer memberNo, Integer boardLike, Integer boardView, CategoryEntity categoryEntity) {
-        this.boardId = boardId;
+    public BoardEntity(Integer bid, String boardTitle, String boardContents, Integer memberNo, Integer boardLike, Integer boardView, CategoryEntity categoryEntity) {
+        this.bid = bid;
         this.boardTitle = boardTitle;
         this.boardContents = boardContents;
         this.memberNo = memberNo;

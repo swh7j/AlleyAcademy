@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.HttpServletRequest;
 
-/*@Controller*/
+@Controller
 public class MemberController {
 
- /*   @Autowired // 자동 메모리 할당
+   @Autowired // 자동 메모리 할당
     MemberService memberService;
     @Autowired
     HttpServletRequest request;
@@ -21,7 +21,7 @@ public class MemberController {
     public String login(){
         return "member/login";
     }
-    @GetMapping("/member/signup") // 회원가입 페이지 연결
+ /*   @GetMapping("/member/signup") // 회원가입 페이지 연결
     public String signup(){
         return "member/signup";
     }

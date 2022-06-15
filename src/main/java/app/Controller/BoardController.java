@@ -2,13 +2,10 @@ package app.Controller;
 
 import app.Entity.BoardEntity;
 import app.Service.BoardService;
-import app.Service.CategoryService;
 import app.dto.BoardDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
 
@@ -21,9 +18,11 @@ public class BoardController {
     private BoardService boardService;
 
     @GetMapping("/boardList")
-    public List<BoardEntity> board_list() {
-        List<BoardEntity> b_list = boardService.get();
-        return b_list;
+    public ResponseEntity<Map> board_list(@RequestParam(value = "p_num", required=false) Integer p_num) {
+        if (p_num == null || p_num <= 0) {
+            p_num = 1;
+        }
+        return  boardService.getboard(p_num);
     }
 
     @PostMapping("/boardList")

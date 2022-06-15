@@ -2,6 +2,7 @@ package app.Service;
 
 
 import app.Entity.AcademyEntity;
+import app.Entity.BoardEntity;
 import app.Exception.ResourceNotFoundException;
 import app.Repository.AcademyRepository;
 import app.util.PagingUtil;
@@ -22,7 +23,7 @@ public class AcademyService {
     @Autowired
     private AcademyRepository AR;
 
-//    @Transactional
+    //    @Transactional
 //    public List<AcademyEntity> get() {
 //
 //        System.out.println("학원목록 모두 불러오기");
@@ -40,14 +41,10 @@ public class AcademyService {
     public ResponseEntity<Map> getac(Integer p_num) {
         Map result = null;
 
-        PagingUtil pu = new PagingUtil(p_num, 20, 5);
-        // ($1:표시할 현재 페이지, $2:한페이지에 표시할 글 수, $3:한 페이지에 표시할 페이지 버튼의 수 )
+        PagingUtil pu = new PagingUtil(p_num, 20, 5); // ($1:표시할 현재 페이지, $2:한페이지에 표시할 글 수, $3:한 페이지에 표시할 페이지 버튼의 수 )
         List<AcademyEntity> list = AR.findFromTo(pu.getObjectStartNum(), pu.getObjectCountPerPage());
         pu.setObjectCountTotal(findAllCount());
         pu.setCalcForPaging();
-        System.out.println("p_num : "+p_num);
-        System.out.println(pu.toString());
-
         if (list == null || list.size() == 0) {
             return null;
         }
@@ -63,6 +60,13 @@ public class AcademyService {
         AcademyEntity academy = AR.findById(no)
                 .orElseThrow(() -> new ResourceNotFoundException("Not exist Board Data by no : ["+no+"]"));
         return ResponseEntity.ok(academy);
+    }
+
+    @Transactional
+    public List<AcademyEntity> getall() {
+
+        List<AcademyEntity> all_list = AR.findAll();
+        return all_list;
     }
 
 }
