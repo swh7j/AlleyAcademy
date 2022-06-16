@@ -15,6 +15,7 @@ import ReadBoard from './components/board/ReadBoard';
 import Login from './components/member/Login';
 import signup from './components/member/signup';
 
+import Main2 from './components/Main2';
 
 function App() {
   return (
@@ -22,10 +23,11 @@ function App() {
       <Router>
         <HeaderComponent/>
         <br></br>
-          <div className="container">
+
              <Switch>
                 <Route path = "/" exact component = {Main}></Route>
                 <Route path = "/list"  component = {List}></Route>
+                <Route path = "/main"  component = {Main2}></Route>
                 <Route path = "/boardlist"  component = {Boardlist}></Route>
                 <Route path = "/boardwrite/:no"  component = {Boardwrite}></Route>
                 <Route path = "/readboard/:no" component = {ReadBoard}></Route>
@@ -33,7 +35,7 @@ function App() {
                 <Route path = "/login" component = {Login}></Route>
                 <Route path = "/signup" component = {signup}></Route>
              </Switch>
-          </div>
+
           <br></br>
         <FooterComponent/>
       </Router>
