@@ -22,7 +22,7 @@ class DetailAcademy extends Component {
     }
 
     goToList() {
-        this.props.history.push('/main2');
+        this.props.history.push('/main');
         window.location.reload();
     }
 

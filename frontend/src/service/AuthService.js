@@ -1,3 +1,4 @@
+
 import axios from 'axios';
 
 
@@ -35,8 +36,6 @@ class AuthService {
     getCurrentUser(){
         return JSON.parse(localStorage.getItem('member'));
     }
-
-
 
 
 

@@ -99,10 +99,10 @@ class Main2 extends Component {
                 <div>
                     <div>
                         <div className="row">
-                            <div className="col-md-10 my-5">
-                                <MapContainer placeList={this.state.alllists2}/>
+                            <div className="col-md-8 my-5">
+                                <MapContainer placeList={this.state.lists}/>
                             </div>
-                            <div className="col-md-2">
+                            <div className="col-md-4">
                                 <h2 className="text-center">학원 목록</h2>
                                 <div className ="row">
                                     <table className="table table-striped table-bordered table-hover">
