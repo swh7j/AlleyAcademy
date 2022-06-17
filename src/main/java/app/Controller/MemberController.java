@@ -4,14 +4,12 @@ import app.Service.MemberService;
 import app.dto.MemberDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
-@CrossOrigin(origins = "http://localhost:3000")
 public class MemberController {
 
     @Autowired // 자동 메모리 할당
@@ -38,15 +36,15 @@ public class MemberController {
     }*/
 
 
-//    @GetMapping("/member/login") // 로그인 페이지 연결
-//    public String login(){
-//        return "member/login";
-//    }
-//
-//    @GetMapping("/member/signup") // 회원가입 페이지 연결
-//    public String signup(){
-//        return "member/signup";
-//    }
+    @GetMapping("/member/login") // 로그인 페이지 연결
+    public String login(){
+        return "member/login";
+    }
+
+    @GetMapping("/member/signup") // 회원가입 페이지 연결
+    public String signup(){
+        return "member/signup";
+    }
 
 
 }
