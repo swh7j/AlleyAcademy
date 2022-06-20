@@ -4,29 +4,27 @@ import { withRouter, Link } from 'react-router-dom';
 
 class Login extends Component {
 
-     goToMain = () => {
-        this.props.history.push('/main');
-      };
-constructor() {
       constructor(props){
         super(props);
         this.state = {
           memberId: '',
           memberPw: '',
         };
-
-
+    }
+     goToMain = () => {
+            this.props.history.push('/main');
+          }
     handleInput = e => {
       const { name, value } = e.target;
       this.setState({
         [name] : value
       });
-    };
-};
-}}
+    }
+
+
     render(){
-    const { memberId, memberPw } = this.state;
-          const checkId = /^\w[\w\-.]*@\w+\.\w{2,}/;
+    /* const { memberId, memberPw } = this.state;
+          const checkId = /^\w[\w\-.]*@\w+\.\w{2,}/; */
         return (
             <div>
                 <div className="row">
@@ -52,15 +50,15 @@ constructor() {
                             <button
                                type="button"
                                onClick={this.goToMain}
-                           disabled={!(checkId.test(memberId) && memberPw.length > 5)}
+                             disabled={!(checkId.test(memberId) && memberPw.length > 5)}
                              ></button>
                         </form>
 
             		</div>
             	</div>
             </div>
-    );
-   }
- }
+        );
+       }
+     }
 
-export default withRouter(Login);
+export default Login;

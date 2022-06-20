@@ -36,14 +36,14 @@ public class MemberController {
     }*/
 
 
-    @GetMapping("/member/login") // 로그인 페이지 연결
+    @GetMapping("/login") // 로그인 페이지 연결
     public String login(){
-        return "member/login";
+        return "/login";
     }
 
-    @GetMapping("/member/signup") // 회원가입 페이지 연결
+    @GetMapping("/signup") // 회원가입 페이지 연결
     public String signup(){
-        return "member/signup";
+        return "/signup";
     }
 
 
