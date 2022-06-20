@@ -37,14 +37,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .ignoringAntMatchers("/**") // ignoringAntMatchers("url") : 요청 위조 보안 제외할 url
                 .and()
                 .formLogin() //로그인페이지 보안설정
-                .loginPage("/member/login") // 아이디/비밀번호를 입력받을 페이지 url
+                .loginPage("/login") // 아이디/비밀번호를 입력받을 페이지 url
                 .defaultSuccessUrl("/") // 로그인 성공시 이동할 url
                 .usernameParameter("memberId") // 시큐리티 로그인[아이디] 기본값은 :username => mid로 변수명 사용
                 .passwordParameter("memberPw") // 시큐리티 로그인[password] 기본값은 : password => m_pw로 변수명 사용
                 // .permitAll() 로그인은 모든 권한이 접근 가능
                 .and()
                 .logout() // 로그아웃 관련 설정
-                .logoutRequestMatcher(new AntPathRequestMatcher("/member/logout")) // 로그아웃 설정
+                .logoutRequestMatcher(new AntPathRequestMatcher("/logout")) // 로그아웃 설정
                 .logoutSuccessUrl("/") // 로그아웃 성공시 이동할 url
                 .invalidateHttpSession(true) // 세션 초기화
                 .and()

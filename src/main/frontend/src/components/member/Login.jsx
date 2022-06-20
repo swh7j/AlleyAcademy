@@ -1,75 +1,32 @@
 import React, { Component } from 'react';
+import { withRouter, Link } from 'react-router-dom';
+
 
 class Login extends Component {
 
-    componentDidMount() {
-      /*   // Naver sdk import
-        const naverScript = document.createElement("script");
-        naverScript.src =
-          "https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js";
-        naverScript.type = "text/javascript";
-        document.head.appendChild(naverScript);
-        // Naver sdk 스크립트 로드 완료시
-        naverScript.onload = () => {
-          const naverLogin = new window.naver.LoginWithNaverId({
-            clientId: "VFMgSLT07NHRL1_Q35Eq",
-            callbackUrl: "http://localhost:3000",
-            callbackHandle: true,
-            isPopup: false, // 로그인 팝업여부
-            loginButton: {
-              color: "green", // 색상(white, green)
-              type: 3, // 버튼타입(1,2,3)
-              height: 60, // 배너 및 버튼 높이
-            },
-          });
-          naverLogin.init();
-          naverLogin.getLoginStatus((status) => {
-            console.log("Naver 로그인 상태" + status);
-            if (status) {
-              console.log("Naver 로그인 상태", naverLogin.user);
-              sessionStorage.setItem("id", naverLogin.user.getEmail());
-            }
-          });
-        };*/
-      }
- /* register(memberId, memberEmail, memberPw){
-        return axios.post(API_URL + "signup",
-        memberId,
-        memberEmail,
-        memberPw
-        )};
-    }
-
-    login(memberId, memberPw){
-        return axios.post(API_URL + "signin",{
-            memberId,
-            memberPw
-        })
-        .then(response => {
-            if(response.data.accessToken){
-                localStorage.setItem("member", JSON.stringify(tesponse.data));
-            }
-            return response.data;
-
-        });
-    }
+     goToMain = () => {
+        this.props.history.push('/main');
+      };
+constructor() {
+      constructor(props){
+        super(props);
+        this.state = {
+          memberId: '',
+          memberPw: '',
+        };
 
 
+    handleInput = e => {
+      const { name, value } = e.target;
+      this.setState({
+        [name] : value
+      });
+    };
+};
 
-    logout(){
-        localStorage.removeItem('member');
-    }
-
-    getCurrentUser(){
-        return JSON.parse(localStorage.getItem('member'));
-    }
-
-
-*/
-
-
-
-    render() {
+    render(){
+    const { memberId, memberPw } = this.state;
+          const checkId = /^\w[\w\-.]*@\w+\.\w{2,}/;
         return (
             <div>
                 <div className="row">
@@ -81,12 +38,29 @@ class Login extends Component {
                            <button class="w-100 py-2 mb-2 btn btn-outline-warning rounded-4" >
                                <a href="/oauth2/authorization/kakao">카카오로그인</a>
                            </button>
-
+                         <form className="login-form">
+                          <div className="login-form__input-box">
+                            <input
+                              type="text" name="memberId"
+                              value={memberId} onChange={this.handleInput.bind(this)}
+                              placeholder="전화번호, 사용자 이름 또는 이메일"/>
+                            <input
+                              type="password" name="memberPw"
+                              value={memberPw} onChange={this.handleInput.bind(this)}
+                              placeholder="비밀번호"/>
+                          </div>
+                            <button
+                               type="button"
+                               onClick={this.goToMain}
+                           disabled={!(checkId.test(memberId) && memberPw.length > 5)}
+                             ></button>
+                        </form>
 
             		</div>
             	</div>
             </div>
-        );
-    }
-}
-export default Login;
+    );
+   }
+ }
+
+export default withRouter(Login);

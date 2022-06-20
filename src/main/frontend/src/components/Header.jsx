@@ -60,11 +60,6 @@ class HeaderComponent extends Component {
 
                        <Nav>
                          <Nav.Link href="/login"> 로그인 </Nav.Link>
-
-                         {/*  <a sec:authorize="isAnonymous()" href="/member/login"> <button type="button" class="btn btn-warning"> Login </button> </a>
-                          <a sec:authorize="isAnonymous()" href="/member/signup"> <button type="button" class="btn btn-warning"> Signup </button>  </a>
-                          <a sec:authorize="isAuthenticated()" href="/member/logout"> <button type="button" class="btn btn-outline-light me-2"> Logout </button> </a>
-                           */}
                          <Nav.Link eventKey={2} href="#memes"> 고객센터 </Nav.Link>
                          <Nav.Link eventKey={2} href="#memes"> 학원센터 </Nav.Link>
                        </Nav>
