@@ -23,7 +23,7 @@ constructor() {
       });
     };
 };
-
+}}
     render(){
     const { memberId, memberPw } = this.state;
           const checkId = /^\w[\w\-.]*@\w+\.\w{2,}/;
