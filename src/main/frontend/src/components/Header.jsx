@@ -6,6 +6,10 @@ import { Nav } from "react-bootstrap";
 import { NavDropdown } from "react-bootstrap";
 import main5 from '../img/main/main_5.png';
 
+import {
+  Link
+} from "react-router-dom";
+
 class HeaderComponent extends Component {
     constructor(props) {
         super(props)
@@ -29,7 +33,7 @@ class HeaderComponent extends Component {
                        <Nav className="me-auto">
 
                          <NavDropdown className="mx-1" title={ <div className="my-auto"> <div><h5>입시</h5></div> <div> 유 / 초 / 중 / 고 </div> </div>  } >
-                           <NavDropdown.Item href="/main">학원목록</NavDropdown.Item>
+                           <NavDropdown.Item><Link to='/main'> 학원목록</Link> </NavDropdown.Item>
                            <NavDropdown.Item href="/boardlist">초등학생</NavDropdown.Item>
                            <NavDropdown.Item href="#">중학생</NavDropdown.Item>
                            <NavDropdown.Item href="#">고등학생</NavDropdown.Item>

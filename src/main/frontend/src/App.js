@@ -4,7 +4,8 @@ import {
   Routes,
   Route,
   Link,
-  Router
+  Router,
+  HashRouter
 } from "react-router-dom";
 
 import Main from './components/Main';
