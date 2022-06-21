@@ -5,7 +5,8 @@ import {
   Route,
   Link,
   Router,
-  HashRouter
+  HashRouter,
+  useParams
 } from "react-router-dom";
 
 import Main from './components/Main';
@@ -26,6 +27,7 @@ import Main2 from './components/Main2';
 
 
 function App() {
+  let params = useParams();
   return (
     <div>
      <BrowserRouter>
