@@ -1,6 +1,6 @@
-
 /* global kakao */
 import React, { Component   } from 'react';
+import { useParams } from 'react-router-dom';
 import AcademyService from '../../service/AcademyService';
 import MapContainer from "../kakaoMap/MapContainer";
 

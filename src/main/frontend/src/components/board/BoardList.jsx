@@ -86,12 +86,10 @@ class BoardList extends Component {
         }
     }
     createBoard() {
-        this.props.history.push('/Boardwrite/_create');
-        window.location.reload();
+        window.location.href='/Boardwrite/_create';
     }
     readBoard(no) {
-        this.props.history.push(`/Readboard/${no}`);
-        window.location.reload();
+        window.location.href='/Readboard/${no}';
     }
     render() {
         return (

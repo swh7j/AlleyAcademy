@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
+import { useParams } from 'react-router-dom';
 import BoardService from '../../service/BoardService';
 
 class ReadBoard extends Component {
+
+
     constructor(props) {
+
         super(props);
 
         this.state = {
