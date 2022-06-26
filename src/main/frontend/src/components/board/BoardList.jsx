@@ -89,7 +89,8 @@ class BoardList extends Component {
         window.location.href='/Boardwrite/_create';
     }
     readBoard(no) {
-        window.location.href='/Readboard/${no}';
+        this.props.navigate.push(`/Readboard/${no}`);
+        window.location.reload();
     }
     render() {
         return (
@@ -114,10 +115,11 @@ class BoardList extends Component {
                         </thead>
                        <tbody>
                            {
+                               console.log(this.state.lists) }{
                                this.state.lists.map(
                                    (list) =>
-                                 <tr key = {list} onClick = {() => this.readBoard(list.boardId)}>
-                                    <td> {list.boardId} </td>
+                                 <tr key = {list} onClick = {() => this.readBoard(list.bid)}>
+                                    <td> {list.bid} </td>
                                     <td> {list.boardTitle} </td>
                                      <td> {list.createTime} </td>
                                     <td> {list.boardView} </td>
