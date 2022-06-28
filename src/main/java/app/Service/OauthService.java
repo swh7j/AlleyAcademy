@@ -1,3 +1,4 @@
+/*
 package app.Service;
 
 
@@ -46,13 +47,15 @@ public class OauthService implements OAuth2UserService<OAuth2UserRequest, OAuth2
 
         // oauth2Dto -> entitiy
 
-     /*   System.out.println( oauth2Dto.toentity()   );
+     */
+/*   System.out.println( oauth2Dto.toentity()   );
         //
         memberRepository.save(  oauth2Dto.toentity()   );
 
         // 리턴 ( 회원정보와 권한[키] )
         return null;
-    }*/
+    }*//*
+
         MemberEntity memberEntity= saveorupdate(oauth2Dto);
         String snsid = memberEntity.getMemberEmail().split("@")[0];
         MemberDto loginDto =   MemberDto.builder().memberId(snsid).memberNo( memberEntity.getMemberNo() ).build();
@@ -99,4 +102,4 @@ public class OauthService implements OAuth2UserService<OAuth2UserRequest, OAuth2
     }
 
 
-}
+}*/

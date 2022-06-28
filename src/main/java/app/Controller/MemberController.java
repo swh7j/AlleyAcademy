@@ -35,6 +35,7 @@ public class MemberController {
         return "redirect:/"; // 회원가입 성공시 메인 페이지로 매핑
     }*/
 
+/*
 
     @GetMapping("/login") // 로그인 페이지 연결
     public String login(){
@@ -45,6 +46,7 @@ public class MemberController {
     public String signup(){
         return "/signup";
     }
+*/
 
 
 }

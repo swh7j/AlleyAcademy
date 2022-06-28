@@ -2,15 +2,10 @@ package app.Service;
 
 import app.Entity.MemberEntity;
 import app.Repository.MemberRepository;
-import app.dto.IntergratedDto;
+
 import app.dto.MemberDto;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
@@ -20,11 +15,14 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class MemberService implements UserDetailsService {
-
+public class MemberService {
+   /* @Service
+    public class MemberService implements UserDetailsService {
+*/
     @Autowired // 자동 메모리 할당
     MemberRepository memberRepository;
 
+/*
     // 회원등록메소드
     public boolean membersignup(MemberDto memberDto){
 
@@ -39,6 +37,7 @@ public class MemberService implements UserDetailsService {
         // save(entity) : insert / update
         return true;
     }
+*/
 
 
 
@@ -66,6 +65,7 @@ public class MemberService implements UserDetailsService {
         Optional<MemberEntity> entityOptional = memberRepository.findById(memberNo);
         return entityOptional.get();
     }
+/*
 
     @Override   // /member/logincontroller URL 호출시 실행되는 메소드 [ 로그인처리(인증처리) 메소드 ]
     public UserDetails loadUserByUsername(String memberId ) throws UsernameNotFoundException {
@@ -88,6 +88,7 @@ public class MemberService implements UserDetailsService {
         // 회원정보와 권한을 갖는 UserDetails 반환
         return new IntergratedDto( memberEntity , authorities );
     }
+*/
 
 
 

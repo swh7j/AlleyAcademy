@@ -1,3 +1,4 @@
+/*
 package app.dto;
 
 import app.Entity.MemberEntity;
@@ -98,4 +99,4 @@ public class OauthDto {
                 .build();
     }
 
-}
+}*/

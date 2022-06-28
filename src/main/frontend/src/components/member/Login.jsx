@@ -40,17 +40,17 @@ class Login extends Component {
                           <div className="login-form__input-box">
                             <input
                               type="text" name="memberId"
-                              value={memberId} onChange={this.handleInput.bind(this)}
+                             // value={memberId} onChange={this.handleInput.bind(this)}
                               placeholder="전화번호, 사용자 이름 또는 이메일"/>
                             <input
                               type="password" name="memberPw"
-                              value={memberPw} onChange={this.handleInput.bind(this)}
+                              //value={memberPw} onChange={this.handleInput.bind(this)}
                               placeholder="비밀번호"/>
                           </div>
                             <button
                                type="button"
                                onClick={this.goToMain}
-                             disabled={!(checkId.test(memberId) && memberPw.length > 5)}
+                             //disabled={!(checkId.test(memberId) && memberPw.length > 5)}
                              ></button>
                         </form>
 
