@@ -4,12 +4,16 @@ import { useParams } from 'react-router-dom';
 import AcademyService from '../../service/AcademyService';
 import MapContainer from "../kakaoMap/MapContainer";
 
+function withParams(Component) {
+  return props => <Component {...props} params={useParams()} />;
+}
+
 class DetailAcademy extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            no: withParams(),
+            no: 0,
             list: {},
         }
     }
