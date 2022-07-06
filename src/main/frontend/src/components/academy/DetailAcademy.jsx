@@ -4,24 +4,17 @@ import { useParams } from 'react-router-dom';
 import AcademyService from '../../service/AcademyService';
 import MapContainer from "../kakaoMap/MapContainer";
 
-function withParams(Component) {
-  return props => <Component {...props} params={useParams()} />;
-}
-
 class DetailAcademy extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            no: 0,
+            no: withParams(),
             list: {},
         }
     }
 
     componentDidMount() {
-        let { id } = this.props.params;
-        this.fetchData(id);
-        console.log(id)
         AcademyService.getOneAcademy(this.state.id).then( res => {
             this.setState({list: res.data});
         });
