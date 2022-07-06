@@ -91,7 +91,9 @@ class Main2 extends Component {
         }
     }
     readAC(no) {
-        this.props.history.push(`/Readboard/`+no);
+        //console.log(no)
+        window.location.href = "/detailAcademy/" + no;
+        //this.props.history.push(`/Readboard/`+no);
     }
      render() {
          return (
