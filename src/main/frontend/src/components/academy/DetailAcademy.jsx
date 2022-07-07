@@ -13,7 +13,7 @@ class DetailAcademy extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            no: 0,
+            no: this.props.match,
             list: {},
         }
     }
